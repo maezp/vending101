@@ -15,12 +15,12 @@ app.get('/', async (req,res)=>{
     return res.json({device : response})
 })
 
-app.post("/create", (req, res) => {
+app.post("/create",(req, res) => {
     itemModel.create(req.body)
     .then(devices => res.json(devices))
     .catch(err => res.json(err))
 })
 
 app.listen(3000, ()=>{
-console.log("Server pokrenut.");
+console.log("Server pokrenut na portu 3000.");
 })

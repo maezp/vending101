@@ -16,9 +16,7 @@ function CreateDevice () {
 
     const Submit = (e) => {
         e.preventDefault();
-        const url = '/CreateDevice';
-        axios.get(url).then((e) => { console.log(e) }).catch((e) => { console.log(e) })
-        axios.post("/create", {deviceAddress, deviceLocation, item1, item2, item3, item4})
+        axios.post("http://localhost:3000/create", {deviceAddress, deviceLocation, item1, item2, item3, item4})
         .then(result => console.log(result))
         .catch(err=>console.log(err))
     }
@@ -38,8 +36,8 @@ function CreateDevice () {
             <TextField onChange={(e)=>setitem3(e.target.value)} id="outlined-basic" label="Item 3 QTY" variant="outlined" />
             <TextField onChange={(e)=>setitem4(e.target.value)} id="outlined-basic" label="Item 4 QTY" variant="outlined" />
             </Box>
-            <p><Button variant="contained" href="/">Na početnu</Button> </p>
             <p><Button variant="contained" onClick={Submit}>Spasi novi uređaj</Button> </p>
+            <p><Button variant="contained" href="/">Na početnu</Button> </p>
         </div>
     )
 }
